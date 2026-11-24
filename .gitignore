@@ -1,0 +1,30 @@
+# Credentials — never commit
+*.key.json
+*-key.json
+tf-noisy-labels.json
+credentials*.json
+
+# Terraform (commit .terraform.lock.hcl, ignore the rest)
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/terraform.tfvars
+infra/crash.log
+
+# Data
+data/*
+!data/README.md
+
+# Large run outputs (per-sample logs, checkpoints)
+results/raw/
+checkpoints/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Quarto
+.quarto/
+*_files/
