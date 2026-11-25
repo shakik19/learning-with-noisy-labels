@@ -27,51 +27,31 @@ The learning rate and epoch budget for all main runs are the defaults of `--lr` 
 in `train.py`. **After the pilot,** change those two defaults, add a line to the deviations log in
 `HYPOTHESES.md`, and commit before starting E1.
 
-## Setup (once per machine)
+## Running
+
+Setup, the pilot and Kaggle are covered step by step in [../RUNBOOK.md](../RUNBOOK.md). The
+commands themselves:
 
 ```bash
-pip install -r requirements.txt
-pip install -e .          # makes the `noisylabels` package in src/ importable
-scripts/smoke.sh          # a few minutes on CPU; must end with "SMOKE TEST PASSED"
-```
-
-On the VM, create the venv with `--system-site-packages` first (see `infra/README.md`).
-
-## On the VM
-
-Always inside `tmux` (`tmux new -s runs`; detach with `Ctrl-b d`, reattach with `tmux attach -t runs`).
-
-```bash
-# Pilot: the two runs one after the other
-scripts/run.sh experiments/pilot.txt
+uv run scripts/run.sh experiments/pilot.txt   # pilot: the two runs one after the other
 ```
 
 Main runs: two lists at the same time on the one GPU, then switch the VM off when both are done:
 
 ```bash
-(scripts/run.sh experiments/e1.txt  experiments/e3_sym.txt  &
- scripts/run.sh experiments/e1b.txt experiments/e3_pair.txt &
+(uv run scripts/run.sh experiments/e1.txt  experiments/e3_sym.txt  &
+ uv run scripts/run.sh experiments/e1b.txt experiments/e3_pair.txt &
  wait); sudo shutdown -h now
 ```
 
 `&` starts a list in the background, `wait` waits for both, and the shutdown runs once both have
-finished. The two groups of lists never contain the same run, so they cannot get in each other's way.
+finished. The two groups of lists never contain the same run, so they cannot get in each other's
+way. **Never start the same list twice at the same time.**
 
 **After a preemption or crash:** start the VM and run the same command again.
 
 **Progress:** `tail -n 3 results/raw/*/train.log`, or watch one run with
 `tail -f results/raw/<name>/train.log`.
-
-## On Kaggle (optional runs, 2 GPUs)
-
-```bash
-pip install -e .
-CUDA_VISIBLE_DEVICES=0 scripts/run.sh experiments/optional_a.txt &
-CUDA_VISIBLE_DEVICES=1 scripts/run.sh experiments/optional_b.txt &
-wait
-```
-
-Add `--data-dir /kaggle/input/<dataset>` to the lines (or copy the data to `./data`).
 
 ## Outputs: `results/raw/<name>/`
 
