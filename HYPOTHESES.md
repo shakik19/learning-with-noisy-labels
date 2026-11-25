@@ -20,7 +20,7 @@ This note fixes, *in advance*, what we expect to observe, how we will measure it
 | Test labels | always clean; used **only** for reporting, never for selection |
 | Model | ResNet-18 (CIFAR variant, 3×3 stem, no max-pool) |
 | Optimizer | SGD, momentum 0.9, weight decay 5e-4, batch 128, constant LR |
-| LR / epochs | **set by the pilot (see §6), then frozen** |
+| LR / epochs | **0.01 / 60**, set by the pilot (§6, deviations log 2026-11-25) |
 | Augmentation | off in all main runs (on only in the optional ablation) |
 | Precision | mixed precision (bf16) |
 | Seeds | 0, 1, 2 (seed controls init, data order and noise draw) |
@@ -167,4 +167,7 @@ The pilot run itself is not used as an E1 result unless its configuration exactl
 
 | Date | Change | Reason | Affects |
 |---|---|---|---|
-| | | | |
+| 2026-11-25 | Pilot run as one run per candidate rate (`pilot_lr0.01`, `pilot_lr0.02`), 100 epochs each | §6 names two candidate rates; each needs its own run | pilot only |
+| 2026-11-25 | **Frozen: LR 0.01, 60 epochs** | Both rates met §6 (crossover reached, memorization plateau before the end). LR 0.01: crossover at epoch 7, full memorization and flat curves from epoch 21. LR 0.02: crossover at epoch 9, plateau only at ~42 with a noisy memorization phase. 60 epochs gives ~3× margin over 0.01's plateau for slower conditions (η 0.6/0.8, pair-flip, Co-teaching); 0.02 would need ~120. 0.02 had the higher test peak (0.651 vs 0.612), which is not a §6 criterion. | all main runs (E1, E1b, E3) |
+| 2026-11-25 | Observation, no change: `pilot_lr0.01` destabilized at epoch 82 (test 0.53 → 0.25, then re-learned and re-memorized by ~93) | Consistent with periodic instabilities under batch norm + weight decay (Lobacheva et al., 2021). Outside the 60-epoch budget; any such event in main runs will be reported | interpretation |
+| 2026-11-25 | Clarification of §4: `smallloss` trains a single network on its own small-loss selection | Without the cross-update, Co-teaching's two networks never interact, so network 1 trains identically with or without network 2; one network gives the same comparison at half the cost | E3 |

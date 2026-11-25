@@ -152,8 +152,9 @@ HYPOTHESES.md §6:
 1. **Learning rate:** the one whose training is stable and where you can see both phases:
    `recovered` above `memorized` early on, then a **crossover** (memorized overtakes recovered).
    If both qualify, take the one with the clearer peak in test accuracy, and write down why.
-2. **Epochs:** memorization should have levelled off before the end. Take the `mem>=90% ep`
-   column for the chosen rate, add about 20 % margin, and round up to a multiple of 10 (at most 100).
+2. **Epochs:** find the epoch after which *all* curves are flat (memorized and clean fit at 1.0,
+   training loss near 0, test accuracy no longer moving). Higher noise rates and Co-teaching
+   take longer, so use about 2–3× that epoch, rounded to a multiple of 10 (at most 100).
 
 If `crossover ep` is `None` for both rates, memorization did not start within 100 epochs. Raise
 `--epochs` in `pilot.txt` (e.g. to 150), commit, pull on the VM and run step 7 again: the pilot
