@@ -1,0 +1,8 @@
+# E1 — noise-rate sweep with standard cross-entropy (HYPOTHESES.md §3, H1.1–H1.4)
+--name clean_ce_s0   --noise none          --method ce --seed 0
+--name sym0.2_ce_s0  --noise sym --eta 0.2 --method ce --seed 0
+--name sym0.4_ce_s0  --noise sym --eta 0.4 --method ce --seed 0
+--name sym0.4_ce_s1  --noise sym --eta 0.4 --method ce --seed 1
+--name sym0.4_ce_s2  --noise sym --eta 0.4 --method ce --seed 2
+--name sym0.6_ce_s0  --noise sym --eta 0.6 --method ce --seed 0
+--name sym0.8_ce_s0  --noise sym --eta 0.8 --method ce --seed 0

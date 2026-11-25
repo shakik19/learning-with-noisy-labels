@@ -1,0 +1,13 @@
+# Optional, exploratory — Kaggle GPU 1 (see optional_a.txt for why results/kaggle).
+
+# Does augmentation delay memorisation? (baseline: sym0.4_ce_s0 in optional_a.txt)
+--name sym0.4_ce_aug_s0 --noise sym --eta 0.4 --method ce --seed 0 --augment --out-dir results/kaggle
+
+# Robust loss (GCE, q = 0.7)
+--name sym0.4_gce_s0  --noise sym  --eta 0.4 --method gce --seed 0 --out-dir results/kaggle
+--name pair0.4_gce_s0 --noise pair --eta 0.4 --method gce --seed 0 --out-dir results/kaggle
+
+# Real human label noise: CIFAR-10N "worst" (needs CIFAR-10_human.pt; tau = its real noise rate)
+--name c10n-worst_ce_s0        --noise cifar10n --method ce        --seed 0 --out-dir results/kaggle
+--name c10n-worst_smallloss_s0 --noise cifar10n --method smallloss --seed 0 --out-dir results/kaggle
+--name c10n-worst_coteach_s0   --noise cifar10n --method coteach   --seed 0 --out-dir results/kaggle

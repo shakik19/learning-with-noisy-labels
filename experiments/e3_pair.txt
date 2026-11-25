@@ -1,0 +1,11 @@
+# E3, pair-flip 0.4 — cross-entropy vs. small-loss vs. Co-teaching (HYPOTHESES.md §4)
+# tau = eta = 0.4 (known noise rate), T_k = 10.
+--name pair0.4_ce_s0        --noise pair --eta 0.4 --method ce        --seed 0
+--name pair0.4_ce_s1        --noise pair --eta 0.4 --method ce        --seed 1
+--name pair0.4_ce_s2        --noise pair --eta 0.4 --method ce        --seed 2
+--name pair0.4_coteach_s0   --noise pair --eta 0.4 --method coteach   --seed 0
+--name pair0.4_coteach_s1   --noise pair --eta 0.4 --method coteach   --seed 1
+--name pair0.4_coteach_s2   --noise pair --eta 0.4 --method coteach   --seed 2
+--name pair0.4_smallloss_s0 --noise pair --eta 0.4 --method smallloss --seed 0
+--name pair0.4_smallloss_s1 --noise pair --eta 0.4 --method smallloss --seed 1
+--name pair0.4_smallloss_s2 --noise pair --eta 0.4 --method smallloss --seed 2

@@ -1,0 +1,4 @@
+# E1b — capacity to memorise random labels, 10k-image subset (H1b.1, H1b.2)
+# Longer budget: fitting random labels is expected to take more epochs than true labels.
+--name sub10k_clean_ce_s0  --noise none   --method ce --seed 0 --subset 10000 --epochs 150
+--name sub10k_random_ce_s0 --noise random --method ce --seed 0 --subset 10000 --epochs 150

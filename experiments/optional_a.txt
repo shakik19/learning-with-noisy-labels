@@ -1,0 +1,10 @@
+# Optional, exploratory — Kaggle GPU 0. Results go to results/kaggle: Kaggle's T4 uses fp16
+# instead of the L4's bf16, so compare these runs with each other (hence the repeated baseline).
+
+# Same-hardware baselines
+--name sym0.4_ce_s0      --noise sym --eta 0.4 --method ce      --seed 0 --out-dir results/kaggle
+--name sym0.4_coteach_s0 --noise sym --eta 0.4 --method coteach --seed 0 --out-dir results/kaggle
+
+# Co-teaching with a mis-specified forget rate (true eta = 0.4)
+--name sym0.4_coteach_tau0.3_s0 --noise sym --eta 0.4 --method coteach --seed 0 --tau 0.3 --out-dir results/kaggle
+--name sym0.4_coteach_tau0.5_s0 --noise sym --eta 0.4 --method coteach --seed 0 --tau 0.5 --out-dir results/kaggle

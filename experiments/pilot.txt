@@ -1,0 +1,4 @@
+# Pilot (HYPOTHESES.md §6): choose the constant learning rate and the epoch budget.
+# 100 epochs, so the final budget can be read off the curves (any value up to 100).
+--name pilot_lr0.01 --noise sym --eta 0.4 --method ce --seed 0 --lr 0.01 --epochs 100
+--name pilot_lr0.02 --noise sym --eta 0.4 --method ce --seed 0 --lr 0.02 --epochs 100

@@ -1,0 +1,9 @@
+# E3, symmetric 0.4 — small-loss vs. Co-teaching (HYPOTHESES.md §4)
+# The cross-entropy baselines for this condition are E1's sym0.4_ce_s0/s1/s2.
+# tau = eta = 0.4 (known noise rate), T_k = 10.
+--name sym0.4_coteach_s0   --noise sym --eta 0.4 --method coteach   --seed 0
+--name sym0.4_coteach_s1   --noise sym --eta 0.4 --method coteach   --seed 1
+--name sym0.4_coteach_s2   --noise sym --eta 0.4 --method coteach   --seed 2
+--name sym0.4_smallloss_s0 --noise sym --eta 0.4 --method smallloss --seed 0
+--name sym0.4_smallloss_s1 --noise sym --eta 0.4 --method smallloss --seed 1
+--name sym0.4_smallloss_s2 --noise sym --eta 0.4 --method smallloss --seed 2
