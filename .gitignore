@@ -1,4 +1,5 @@
-# Credentials — never commit
+# Credentials and local environment — never commit (.env.example is the template)
+.env
 *.key.json
 *-key.json
 tf-noisy-labels.json
@@ -17,14 +18,19 @@ data/*
 
 # Large run outputs (per-sample logs, checkpoints)
 results/raw/
+results/raw-*/
+results/smoke/
 checkpoints/
 
 # Python
 .venv/
 __pycache__/
 *.pyc
+*.egg-info/
 .ipynb_checkpoints/
 
 # Quarto
 .quarto/
 *_files/
+
+
