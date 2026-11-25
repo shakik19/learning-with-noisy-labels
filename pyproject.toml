@@ -5,8 +5,18 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "noisylabels"
 version = "0.1.0"
-description = "AAI2 A2 — Learning with Noisy Labels: experiment code"
+description = "Learning with Noisy Labels: experiment code"
 requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26,<3",
+    "pandas>=2.1",
+    "pytest>=8",
+    "scikit-learn>=1.4",
+    "scipy>=1.11",
+    "torch==2.9.*",
+    "torchvision==0.24.*",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
