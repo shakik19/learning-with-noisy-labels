@@ -3,9 +3,6 @@ torch==2.9.*
 torchvision==0.24.*
 numpy>=1.26,<3
 
-# Monitoring
-wandb==0.31.2
-
 # Analysis (AUROC, GMM on losses, tables)
 scipy>=1.11
 scikit-learn>=1.4
@@ -13,3 +10,6 @@ pandas>=2.1
 
 # Figures
 matplotlib>=3.8
+
+# Tests (scripts/smoke.sh)
+pytest>=8
