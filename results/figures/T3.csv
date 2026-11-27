@@ -1,0 +1,7 @@
+noise,method,seeds,realized_train_noise_pct,final_test_mean_pct,final_test_sd_pp,final_s0_pct,final_s1_pct,final_s2_pct,es_test_mean_pct,es_test_sd_pp,es_s0_pct,es_s1_pct,es_s2_pct,es_epoch_s0,es_epoch_s1,es_epoch_s2
+Symmetric,Cross-entropy,3 seeds,39.97 ± 0.03,52.95000,0.44844,53.05000,52.46000,53.34000,59.80333,1.42777,58.91000,61.45000,59.05000,6,4,6
+Symmetric,Small-loss,3 seeds,39.97 ± 0.03,63.39000,3.59067,59.32000,66.11000,64.74000,,,,,,,,
+Symmetric,Co-teaching,3 seeds,39.97 ± 0.03,68.64000,0.77942,69.09000,69.09000,67.74000,,,,,,,,
+Pair-flip,Cross-entropy,3 seeds,39.97 ± 0.03,53.20333,0.82803,53.81000,52.26000,53.54000,55.76000,3.29145,53.40000,54.36000,59.52000,43,4,5
+Pair-flip,Small-loss,3 seeds,39.97 ± 0.03,65.15333,0.91106,65.95000,64.16000,65.35000,,,,,,,,
+Pair-flip,Co-teaching,3 seeds,39.97 ± 0.03,68.92000,1.85720,69.70000,66.80000,70.26000,,,,,,,,

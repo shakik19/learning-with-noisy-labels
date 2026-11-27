@@ -1,0 +1,5 @@
+noise,method,seeds,mean_precision_epochs_31_to_60_pct,sd_of_seed_means_pp,min_precision_epochs_11_to_60_pct,mean_base_clean_pct,h3_4_all_post_warmup_epochs_all_seeds,base_clean_s0_pct,min_post_warmup_precision_s0_pct,base_clean_s1_pct,min_post_warmup_precision_s1_pct,base_clean_s2_pct,min_post_warmup_precision_s2_pct
+Symmetric,Small-loss,3 seeds,84.41579,0.22177,83.59808,60.02889,True,60.04222,84.27780,59.99778,83.59808,60.04667,84.05246
+Symmetric,Co-teaching,3 seeds,82.88618,0.09026,82.35685,60.02889,True,60.04222,82.35685,59.99778,82.40488,60.04667,82.47876
+Pair-flip,Small-loss,3 seeds,77.56968,0.56809,75.10528,60.02889,True,60.04222,76.29110,59.99778,75.37865,60.04667,75.10528
+Pair-flip,Co-teaching,3 seeds,78.85063,0.19807,78.01995,60.02889,True,60.04222,78.01995,59.99778,78.04211,60.04667,78.17510
