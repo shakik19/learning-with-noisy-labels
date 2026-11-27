@@ -1,0 +1,7 @@
+noise,hypothesis,method_a,method_b,mean_a_minus_b_pp,twice_larger_sd_pp,a_ge_b_all_seeds,b_ge_a_all_seeds,verdict
+Symmetric,H3.1,Co-teaching final,Cross-entropy final,15.69000,1.55884,True,False,Co-teaching final outperforms
+Symmetric,H3.2,Co-teaching final,Cross-entropy at early stopping,8.83666,2.85554,True,False,Co-teaching final outperforms
+Symmetric,H3.3,Co-teaching final,Small-loss final,5.25000,7.18134,True,False,No clear difference
+Pair-flip,H3.1,Co-teaching final,Cross-entropy final,15.71667,3.71441,True,False,Co-teaching final outperforms
+Pair-flip,H3.2,Co-teaching final,Cross-entropy at early stopping,13.16000,6.58289,True,False,Co-teaching final outperforms
+Pair-flip,H3.3,Co-teaching final,Small-loss final,3.76667,3.71441,True,False,Co-teaching final outperforms

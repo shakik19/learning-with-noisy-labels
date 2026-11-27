@@ -1,0 +1,5 @@
+source,run,epoch,previous_test_pct,test_pct,drop_pp
+Main raw,pair0.4_coteach_s1,57,68.67000,57.23000,11.44000
+Main raw,pilot_lr0.01,82,52.25000,24.99000,27.26000
+Main raw,pilot_lr0.01,84,61.44000,49.90000,11.54000
+Main raw,pilot_lr0.02,83,54.16000,10.00000,44.16000
